@@ -10,14 +10,16 @@ import { headingColor, textColor } from "./utilities.jsx";
 import FullScreen from "./full-screen.jsx";
 
 const imageStyle = {
-  position: "absolute",
-  left: "50%",
-  transform: "translateX(-50%)"
+  position: "relative",
+  top: "10%",
+  height: "40%",
+  width: "35%"
 };
 
-const ImageSlide = ({
+const DoubleImageSlide = ({
   title,
-  image,
+  image1,
+  image2,
   size,
   fit,
   caps,
@@ -25,18 +27,9 @@ const ImageSlide = ({
   text,
   children
 }) => {
-  const imageSrc = require(`../../assets/images/${image}`).replace("/", "");
-  const thisImageStyle = {
-    ...imageStyle,
-    zoom: 8, //increase if you have very small images
-    display: "block",
-    margin: "auto",
-    height: "auto",
-    width: "auto",
-    maxWidth: "100%",
-    top: title ? "10%" : "0%",
-    maxHeight: title ? "90%" : "100%"
-  };
+  const imageSrc1 = require(`../../assets/images/${image1}`).replace("/", "");
+  const imageSrc2 = require(`../../assets/images/${image2}`).replace("/", "");
+
   return (
     <FullScreen column>
       {!!title && (
@@ -56,11 +49,13 @@ const ImageSlide = ({
         style={{
           flex: 1,
           position: "relative",
-          width: "100%",
-          justifyContent: "stretch"
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between"
         }}
       >
-        <Image style={thisImageStyle} src={imageSrc} />
+        <Image style={imageStyle} src={imageSrc1} />
+        <Image style={imageStyle} src={imageSrc2} />
       </div>
       {!!text && (
         <div style={{ width: 1000 }}>
@@ -74,21 +69,22 @@ const ImageSlide = ({
   );
 };
 
-ImageSlide.propTypes = {
+DoubleImageSlide.propTypes = {
   caps: PropTypes.bool.isRequired,
   fit: PropTypes.bool.isRequired,
-  image: PropTypes.string.isRequired,
+  image1: PropTypes.string.isRequired,
+  image2: PropTypes.string.isRequired,
   inverted: PropTypes.bool,
   size: PropTypes.number.isRequired,
   text: PropTypes.node,
   title: PropTypes.string
 };
 
-ImageSlide.defaultProps = {
+DoubleImageSlide.defaultProps = {
   inverted: false,
   size: 1,
   fit: true,
   caps: true
 };
 
-export default asSlide(ImageSlide);
+export default asSlide(DoubleImageSlide);

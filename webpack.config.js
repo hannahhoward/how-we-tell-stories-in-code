@@ -1,7 +1,7 @@
 /* eslint-disable */
 
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -15,80 +15,118 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/dist',
+    publicPath: '/dist'
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    rules: [{
-      test: /\.md$/,
-      use: [{
-        loader: 'html-loader'
-      }, {
-        loader: 'markdown-loader',
+    rules: [
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: 'markdown-loader',
 
-        options: {
-          gfm: false
-        }
-      }]
-    }, {
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: [{
-        loader: 'babel-loader'
-      }],
-      include: __dirname
-    }, {
-      test: /\.css$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'raw-loader'
-      }],
-      include: __dirname
-    }, {
-      test: /\.svg$/,
-      use: [{
-        loader: 'url-loader',
+            options: {
+              gfm: false
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ],
+        include: __dirname
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'raw-loader'
+          }
+        ],
+        include: __dirname
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'ts-loader'
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              mimetype: 'image/svg+xml'
+            }
+          }
+        ],
+        include: path.join(__dirname, 'assets')
+      },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'url-loader',
 
-        options: {
-          limit: 10000,
-          mimetype: 'image/svg+xml'
-        }
-      }],
-      include: path.join(__dirname, 'assets')
-    }, {
-      test: /\.png$/,
-      use: [{
-        loader: 'url-loader',
+            options: {
+              mimetype: 'image/png'
+            }
+          }
+        ],
+        include: path.join(__dirname, 'assets')
+      },
+      {
+        test: /\.gif$/,
+        use: [
+          {
+            loader: 'url-loader',
 
-        options: {
-          mimetype: 'image/png'
-        }
-      }],
-      include: path.join(__dirname, 'assets')
-    }, {
-      test: /\.gif$/,
-      use: [{
-        loader: 'url-loader',
+            options: {
+              mimetype: 'image/gif'
+            }
+          }
+        ],
+        include: path.join(__dirname, 'assets')
+      },
+      {
+        test: /\.jpg$/,
+        use: [
+          {
+            loader: 'url-loader',
 
-        options: {
-          mimetype: 'image/gif'
-        }
-      }],
-      include: path.join(__dirname, 'assets')
-    }, {
-      test: /\.jpg$/,
-      use: [{
-        loader: 'url-loader',
-
-        options: {
-          mimetype: 'image/jpg'
-        }
-      }],
-      include: path.join(__dirname, 'assets')
-    }]
+            options: {
+              mimetype: 'image/jpg'
+            }
+          }
+        ],
+        include: path.join(__dirname, 'assets')
+      }
+    ]
+  },
+  resolve: {
+    // you can now require('file') instead of require('file.coffee')
+    extensions: ['.js', '.jsx', '.json']
   }
-};
+}
