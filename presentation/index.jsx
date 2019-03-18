@@ -1,6 +1,5 @@
 // Import React
-import React from 'react'
-import '../assets/prism-tomorrow-ally.css'
+import React from 'react';
 
 // Import Spectacle Core tags
 import {
@@ -16,13 +15,13 @@ import {
   Notes
 } from 'spectacle'
 
-import AboutMeSlide from './slideTemplates/about-me-slide.jsx'
-import QuoteSlide from './slideTemplates/quote-slide.jsx'
-import DefinitionSlide from './slideTemplates/definition-slide.jsx'
-import ListSlide from './slideTemplates/list-slide.jsx'
-import SimpleSlide from './slideTemplates/simple-slide.jsx'
-import ConceptSlide from './slideTemplates/concept-slide.jsx'
-import ImageSlide from './slideTemplates/image-slide.jsx'
+import AboutMeSlide from './slideTemplates/about-me-slide.jsx';
+import QuoteSlide from "./slideTemplates/quote-slide.jsx";
+import DefinitionSlide from './slideTemplates/definition-slide.jsx';
+import ListSlide from "./slideTemplates/list-slide.jsx";
+import SimpleSlide from './slideTemplates/simple-slide.jsx';
+import ConceptSlide from './slideTemplates/concept-slide.jsx';
+import ImageSlide from './slideTemplates/image-slide.jsx';
 import DoubleImageSlide from './slideTemplates/double-image-slide.jsx'
 import QuotesSlide from './slideTemplates/quotes-slide.jsx'
 import colors from './slideTemplates/colors'
@@ -31,6 +30,7 @@ import CodeSlide from 'spectacle-code-slide'
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader'
 preloader({})
+
 // Import theme
 import createTheme from 'spectacle/lib/themes/default'
 
