@@ -1,13 +1,13 @@
 // Import React
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import Spectacle Core tags
-import { Heading, Text } from "spectacle";
+import { Heading, Text } from 'spectacle'
 
-import asSlide from "./as-slide.jsx";
-import { headingColor, textColor } from "./utilities.jsx";
-import FullScreen from "./full-screen.jsx";
+import asSlide from './as-slide.jsx'
+import { headingColor, textColor } from './utilities.jsx'
+import FullScreen from './full-screen.jsx'
 
 const DefinitionSlide = ({
   inverted,
@@ -28,15 +28,15 @@ const DefinitionSlide = ({
         textColor={headingColor(inverted)}
       >
         {term}
-        {colon ? ":" : ""}
+        {colon ? ':' : ''}
       </Heading>
-      <Text style={{ marginTop: "40px" }} textColor={textColor(inverted)}>
+      <Text style={{ marginTop: '40px' }} textColor={textColor(inverted)}>
         {definition}
       </Text>
       {children}
     </FullScreen>
-  );
-};
+  )
+}
 
 DefinitionSlide.propTypes = {
   caps: PropTypes.bool.isRequired,
@@ -46,7 +46,7 @@ DefinitionSlide.propTypes = {
   size: PropTypes.number.isRequired,
   term: PropTypes.string.isRequired,
   colon: PropTypes.bool.isRequired
-};
+}
 
 DefinitionSlide.defaultProps = {
   inverted: false,
@@ -54,6 +54,6 @@ DefinitionSlide.defaultProps = {
   fit: true,
   caps: true,
   colon: true
-};
+}
 
-export default asSlide(DefinitionSlide);
+export default asSlide(DefinitionSlide)

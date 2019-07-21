@@ -1,13 +1,13 @@
 // Import React
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import Spectacle Core tags
-import { Heading, Text } from "spectacle";
+import { Heading, Text } from 'spectacle'
 
-import asSlide from "./as-slide.jsx";
-import { headingColor, textColor } from "./utilities.jsx";
-import FullScreen from "./full-screen.jsx";
+import asSlide from './as-slide.jsx'
+import { headingColor, textColor } from './utilities.jsx'
+import FullScreen from './full-screen.jsx'
 
 const ConceptSlide = ({
   inverted,
@@ -31,8 +31,8 @@ const ConceptSlide = ({
       </Heading>
       {children}
     </FullScreen>
-  );
-};
+  )
+}
 
 ConceptSlide.propTypes = {
   caps: PropTypes.bool.isRequired,
@@ -41,13 +41,13 @@ ConceptSlide.propTypes = {
   fit: PropTypes.bool.isRequired,
   inverted: PropTypes.bool,
   size: PropTypes.number.isRequired
-};
+}
 
 ConceptSlide.defaultProps = {
   inverted: false,
   size: 1,
   fit: true,
   caps: true
-};
+}
 
-export default asSlide(ConceptSlide);
+export default asSlide(ConceptSlide)
