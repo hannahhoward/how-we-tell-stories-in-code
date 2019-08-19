@@ -6,17 +6,17 @@ import '../assets/prism-tomorrow-ally.css'
 // Import Spectacle Core tags
 import { Deck, Notes } from 'spectacle'
 
-import QuoteSlide from './slideTemplates/quote-slide.jsx'
-import DefinitionSlide from './slideTemplates/definition-slide.jsx'
+// import QuoteSlide from './slideTemplates/quote-slide.jsx'
+// import DefinitionSlide from './slideTemplates/definition-slide.jsx'
 import ListSlide from './slideTemplates/list-slide.jsx'
 import SimpleSlide from './slideTemplates/simple-slide.jsx'
 import ConceptSlide from './slideTemplates/concept-slide.jsx'
-import ImageSlide from './slideTemplates/image-slide.jsx'
-import DoubleImageSlide from './slideTemplates/double-image-slide.jsx'
-import QuotesSlide from './slideTemplates/quotes-slide.jsx'
+// import ImageSlide from './slideTemplates/image-slide.jsx'
 import FullImageSlide from './slideTemplates/full-image-slide.jsx'
+// import DoubleImageSlide from './slideTemplates/double-image-slide.jsx';
+// import QuotesSlide from './slideTemplates/quotes-slide.jsx';
 import colors from './slideTemplates/colors'
-import CodeSlide from 'spectacle-code-slide'
+// import CodeSlide from 'spectacle-code-slide'
 
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader'
@@ -37,6 +37,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={['fade']} transitionDuration={500} theme={theme}>
+        <FullImageSlide image="intro.png"></FullImageSlide>
         <ListSlide
           title={
             <span>
@@ -47,7 +48,13 @@ export default class Presentation extends React.Component {
             </span>
           }
           appear={false}
-          list={['Gender issues', 'Mental illness', 'Psychosis']}
+          list={[
+            'Gender issues',
+            'Mental illness',
+            'Drug use',
+            'Psychosis',
+            'Grief and loss'
+          ]}
         />
         <FullImageSlide inverted image="campfire.png">
           <Notes>
@@ -155,20 +162,28 @@ export default class Presentation extends React.Component {
               in computer science, I was very idealistic so I worked in
               non-profits before getting back into tech in my mid 30’s.
             </p>
-          </Notes>
-        </FullImageSlide>
-        <FullImageSlide inverted image="demon.png">
-          <Notes>
             <p>
-              And what became clear to me quickly is that I was, in fact, no
-              great programmer. I spent a year and a half trying to write a 3-d
-              computer game engine to emulate the crowning achievement in game
-              graphics at the time — Doom — and I failed miserably.{' '}
+              Programming is something I was drawn to because I was able to pick
+              up the basic mechanics - variables, loops, etc - quickly.
+              Imperative logic made sense to me. When I’ve taught code school,
+              I’ve seen that people pick up these mechanics at widely varying
+              speeds. When we have conversations about programming aptitude, we
+              rate people based on solely skils with these mechanics. To me,
+              this is basically like looking for great authors by going to a 2nd
+              grade classrooms and looking for students that are learning to
+              read fastest.
             </p>
           </Notes>
         </FullImageSlide>
         <FullImageSlide inverted image="jenga.png">
           <Notes>
+            <p>
+              What became clear to me quickly is that I was, in fact, no great
+              programmer. I spent a year and a half trying to write a 3-d
+              computer game engine to emulate the crowning achievement in game
+              graphics at the time — Doom — and I failed miserably.{' '}
+            </p>
+
             <p>
               I mean I wrote something— it just crashed every minute or so,
               meaning the computer needed a restart.
@@ -191,7 +206,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </FullImageSlide>
-        <SimpleSlide inverted fit={false} statement="Doom Source Code Image">
+        <FullImageSlide inverted image="demon.png">
           <Notes>
             <p>
               A couple years later, the Doom source code was released while I
@@ -208,14 +223,14 @@ export default class Presentation extends React.Component {
               it took me almost 15 year to see I’d missed something.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <SimpleSlide statement="Part 2">
           <Notes>
             This brings me to slightly more honest answer about how I got into
             the tech industry. I’d like to tell it to you now:
           </Notes>
         </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Transition Image">
+        <FullImageSlide inverted image="transition.png">
           <Notes>
             <p>
               After I graduated college, at the age of 23 I decided to
@@ -224,7 +239,7 @@ export default class Presentation extends React.Component {
               a career in non-profit.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <FullImageSlide inverted image="women-in-tech.png">
           <Notes>
             <p>
@@ -236,7 +251,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </FullImageSlide>
-        <SimpleSlide inverted statement="Know You Audience">
+        <SimpleSlide inverted statement="Know Your Audience">
           <Notes>
             <p>
               Now this isn’t a secret story. Most people who’ve known me for any
@@ -252,10 +267,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </SimpleSlide>
-        <SimpleSlide
-          inverted
-          fit={false}
-          statement="Computers Talk To Each Other Image">
+        <FullImageSlide inverted image="computer-code.png">
           <Notes>
             <p>
               But the computer could take those instructions directly in the
@@ -266,7 +278,7 @@ export default class Presentation extends React.Component {
               output programs that none of us can even remotely understand.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <ConceptSlide
           inverted
           concept="Reminder"
@@ -282,10 +294,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </ConceptSlide>
-        <SimpleSlide
-          inverted
-          fit={false}
-          statement="Frustration with imperative code image">
+        <FullImageSlide inverted image="iterative1.png">
           <Notes>
             <p>
               Why would I adopt the current trends of functional programming,
@@ -295,11 +304,8 @@ export default class Presentation extends React.Component {
               doing it without error.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide
-          inverted
-          fit={false}
-          statement="Other person frustrated with imperative code image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="iterative2.png">
           <Notes>
             <p>
               Or, possibly, I spent lots of time writing some complicated
@@ -312,8 +318,8 @@ export default class Presentation extends React.Component {
               the medium of code. We just telling stories.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Writers Workshop Image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="writers-workshop.png">
           <Notes>
             <p>
               So, it’s sorta funny that we think patterns will save us. Can you
@@ -322,8 +328,8 @@ export default class Presentation extends React.Component {
               tried patterns even when I was young. They didn’t help a lot.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Action Frameworks Image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="framework-wars.png">
           <Notes>
             <p>
               Our frameworks can sometimes reduce the scope of the narratives we
@@ -335,7 +341,7 @@ export default class Presentation extends React.Component {
               do something novel.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <SimpleSlide inverted statement="What can we do?">
           <Notes>
             <p>
@@ -428,7 +434,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </FullImageSlide>
 
-        <SimpleSlide inverted fit={false} statement="Organizing 1 image">
+        <FullImageSlide inverted image="organizing1.png">
           <Notes>
             <p>
               I inadvertently took a graduate level course in how to do this
@@ -437,8 +443,8 @@ export default class Presentation extends React.Component {
               grant writer.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Organizing 2 image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="organizing2.png">
           <Notes>
             <p>
               Like most underfunded non-profit groups made up entirely of
@@ -447,8 +453,8 @@ export default class Presentation extends React.Component {
               didn’t help others.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Organizing 3 image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="organizing3.png">
           <Notes>
             <p>
               We tried to solve problems for people with multiple oppressions
@@ -457,8 +463,8 @@ export default class Presentation extends React.Component {
               through bitter internal strifes and conflicts.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Organizing 4 image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="organizing4.png">
           <Notes>
             <p>
               And, then, in order to get funding, we had take all this work, and
@@ -469,7 +475,7 @@ export default class Presentation extends React.Component {
               mostly transgender people of color.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <FullImageSlide inverted image="multiple-truths1.png">
           <Notes>
             <p>
@@ -503,7 +509,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </FullImageSlide>
-        <SimpleSlide inverted fit={false} statement="Heart Of Truth 5 Image">
+        <FullImageSlide inverted image="multiple-truths5.png">
           <Notes>
             <p>
               In effect, I constructed a system for understanding the work we
@@ -512,7 +518,7 @@ export default class Presentation extends React.Component {
               consistency and captured what was important.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <SimpleSlide inverted statement="Software Narratives Change">
           <Notes>
             <p>
@@ -525,7 +531,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Problem Space Image">
+        <FullImageSlide inverted image="problem-space.png">
           <Notes>
             <p>
               Every software system that is useful is useful cause it solves a
@@ -534,9 +540,9 @@ export default class Presentation extends React.Component {
               software covers.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
 
-        <SimpleSlide inverted fit={false} statement="Writers Workshop Image 2">
+        <FullImageSlide inverted image="writers-workshop.png">
           <Notes>
             <p>
               The way I learned to write grants was through practice, feedback,
@@ -544,7 +550,7 @@ export default class Presentation extends React.Component {
               each others stories, and give feedback.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <ListSlide
           title="3 Steps To Becoming A Good Programmer"
           appear={false}
@@ -557,7 +563,7 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </ListSlide>
-        <SimpleSlide inverted fit={false} statement="Practicing Image">
+        <FullImageSlide inverted image="target-practice.png">
           <Notes>
             <p>
               There’s only individual feedback and revision. We almost never get
@@ -565,8 +571,8 @@ export default class Presentation extends React.Component {
               doesn’t make a lot of sense to someone reading it.
             </p>
           </Notes>
-        </SimpleSlide>
-        <SimpleSlide inverted fit={false} statement="Feedback Image">
+        </FullImageSlide>
+        <FullImageSlide inverted image="pair-programming.png">
           <Notes>
             <p>
               Most of the practices in programming I’ve leaned on in the long
@@ -577,7 +583,7 @@ export default class Presentation extends React.Component {
               creative part to writing code which has no immediate formula.
             </p>
           </Notes>
-        </SimpleSlide>
+        </FullImageSlide>
         <SimpleSlide statement="Part 4"></SimpleSlide>
         <SimpleSlide inverted fit={false} statement="What Now?">
           <Notes>
@@ -691,7 +697,7 @@ export default class Presentation extends React.Component {
         </FullImageSlide>
         <FullImageSlide image="paper5.png">
           <Notes>
-            <p>Try to do better the next day. </p>
+            <p>Try to do better the next day.</p>
           </Notes>
         </FullImageSlide>
       </Deck>

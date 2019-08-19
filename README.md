@@ -1,64 +1,11 @@
-[![Maintenance Status][maintenance-image]](#maintenance-status)
+# How We Tell Stories In Code
 
-# Spectacle Boilerplate
+### Setup Instructions
 
-## Contents
+Really easy!
 
-- [Reference](#reference)
-- [Getting Started](#getting-started)
-- [Tutorial](#tutorial)
-- [Build & Deployment](#build-deployment)
+In a web browser (tested in Chrome), open index.html! (you don't even need to start a web server)
 
-## Reference
+For speaker notes, open a second browser window. Open the index.html, and then add ?presenter&timer to the end or the URL -- you will get speaker notes and a timer! When you changes slides in one window the other window will also update!
 
-The Spectacle core API is available in the [Spectacle Docs](https://github.com/FormidableLabs/spectacle/blob/master/README.md).
-
-## Getting Started
-
-1. Download the boilerplate
-
-   ```sh
-   git clone git@github.com:FormidableLabs/spectacle-boilerplate.git
-   ```
-
-2. Remove existing version control
-
-   ```sh
-   rm -R .git
-   ```
-
-3. Install dependencies
-
-   ```sh
-   yarn install
-   ```
-
-4. Start the webpack server. The server will run at [`localhost:3000`](http://localhost:3000).
-
-   ```sh
-   yarn start
-   ```
-
-## Tutorial
-
-If want you a step-by-step guide for getting started with Spectacle, a basic tutorial is available [here](https://github.com/FormidableLabs/spectacle/blob/master/docs/tutorial.md).
-
-## Build & Deployment
-
-Building the dist version of the project is as easy as running
-
-```sh
-yarn build
-```
-
-If you want to deploy the slideshow to surge, run
-
-```sh
-yarn deploy
-```
-
-## Maintenance Status
-
-**Active:** Formidable is actively working on this project, and we expect to continue for work for the foreseeable future. Bug reports, feature requests and pull requests are welcome. 
-
-[maintenance-image]: https://img.shields.io/badge/maintenance-active-green.svg
+Recommend reading speaker notes as the presentation is mostly visual.
