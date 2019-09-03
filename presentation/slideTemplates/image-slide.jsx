@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Import Spectacle Core tags
-import { Heading, Image, Text } from 'spectacle'
+import { Heading, Image, Text } from './components'
 
 import asSlide from './as-slide.jsx'
 import { headingColor, textColor } from './utilities.jsx'

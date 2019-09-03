@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Import Spectacle Core tags
-import { Heading, Appear, Image, Text } from 'spectacle'
+import { Heading, Image, Text, Appear } from './components'
 import styled from 'styled-components'
 
 import asSlide from './as-slide.jsx'
