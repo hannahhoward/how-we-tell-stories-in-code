@@ -1,8 +1,10 @@
 const TerserPlugin = require('terser-webpack-plugin')
+const GoogleFontsPlugin = require('@beyonk/google-fonts-webpack-plugin')
 /* eslint-disable */
 
 var path = require('path')
 var webpack = require('webpack')
+var googleFonts = require('./google-fonts.json')
 
 module.exports = {
   mode: 'production',
@@ -20,7 +22,11 @@ module.exports = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new webpack.IgnorePlugin(/\.\/canvas.js/)
+    new webpack.IgnorePlugin(/\.\/canvas.js/),
+    new GoogleFontsPlugin({
+      fonts: googleFonts
+      /* ...options */
+    })
   ],
 
   module: {

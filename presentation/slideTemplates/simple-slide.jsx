@@ -16,8 +16,7 @@ const SimpleSlide = ({ inverted, statement, size, fit, caps, children }) => {
         size={size}
         fit={fit}
         caps={caps}
-        textColor={headingColor(inverted)}
-      >
+        textColor={headingColor(inverted)}>
         {statement}
       </Heading>
       {children}

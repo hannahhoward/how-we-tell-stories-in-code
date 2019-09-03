@@ -28,7 +28,7 @@ const ImageSlide = ({
   const imageSrc = require(`../../assets/images/${image}`).replace('/', '')
   const thisImageStyle = {
     ...imageStyle,
-    zoom: 8, //increase if you have very small images
+    zoom: 8, // increase if you have very small images
     display: 'block',
     margin: 'auto',
     height: 'auto',
@@ -46,8 +46,7 @@ const ImageSlide = ({
             fit={fit}
             caps={caps}
             textColor={headingColor(inverted)}
-            style={{ marginBottom: '.5em' }}
-          >
+            style={{ marginBottom: '.5em' }}>
             {title}
           </Heading>
         </div>
@@ -58,8 +57,7 @@ const ImageSlide = ({
           position: 'relative',
           width: '100%',
           justifyContent: 'stretch'
-        }}
-      >
+        }}>
         <Image style={thisImageStyle} src={imageSrc} />
       </div>
       {!!text && (

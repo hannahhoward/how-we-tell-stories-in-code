@@ -3,18 +3,7 @@ import React from 'react'
 import '../assets/prism-tomorrow-ally.css'
 
 // Import Spectacle Core tags
-import {
-  BlockQuote,
-  Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text,
-  Notes
-} from 'spectacle'
+import { Deck, Notes } from 'spectacle'
 
 import AboutMeSlide from './slideTemplates/about-me-slide.jsx'
 import QuoteSlide from './slideTemplates/quote-slide.jsx'
@@ -25,15 +14,16 @@ import ConceptSlide from './slideTemplates/concept-slide.jsx'
 import ImageSlide from './slideTemplates/image-slide.jsx'
 import DoubleImageSlide from './slideTemplates/double-image-slide.jsx'
 import QuotesSlide from './slideTemplates/quotes-slide.jsx'
+import FullImageSlide from './slideTemplates/full-image-slide.jsx'
 import colors from './slideTemplates/colors'
 import CodeSlide from 'spectacle-code-slide'
 
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader'
-preloader({})
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default'
+preloader({})
 
 // Require CSS
 require('normalize.css')
@@ -49,8 +39,7 @@ export default class Presentation extends React.Component {
       <Deck
         transition={['zoom', 'slide']}
         transitionDuration={500}
-        theme={theme}
-      >
+        theme={theme}>
         <AboutMeSlide>
           <Notes>
             <p>
@@ -66,8 +55,7 @@ export default class Presentation extends React.Component {
         <DefinitionSlide
           fit={false}
           term="Apples"
-          definition="A Large Round Red Fruit"
-        >
+          definition="A Large Round Red Fruit">
           <Notes>
             Definition slides have a large heading and small, longer text below,
             usually used to define term.
@@ -80,19 +68,31 @@ export default class Presentation extends React.Component {
         <ImageSlide
           title="Pooh Beard"
           image="poohbear.jpg"
-          text="Here is my dog"
-        >
+          text="Here is my dog">
           <Notes>
             Image slide displays an image with a heading above and regular size
             text below <br />
             Images should live in assets/images to be picked up here
           </Notes>
         </ImageSlide>
+        <DoubleImageSlide
+          title="Pooh Bear vs C5"
+          image1="poohbear.jpg"
+          image2="c5_final_logo_only_hires.png"
+          text="Here is my dog">
+          <Notes>
+            Double Image slide displays two images with a heading above and
+            regular size text below <br />
+            Images should live in assets/images to be picked up here
+          </Notes>
+        </DoubleImageSlide>
+        <FullImageSlide image="poohbear.jpg">
+          <Notes>Full image that covers the whole screen</Notes>
+        </FullImageSlide>
         <SimpleSlide
           inverted
           fit={false}
-          statement="What is a computer program?"
-        >
+          statement="What is a computer program?">
           <Notes>
             <p>Simple slide is just a one line statement at heading size</p>
             <p>
@@ -106,14 +106,22 @@ export default class Presentation extends React.Component {
         </SimpleSlide>
         <QuoteSlide
           quote="Fourscore and seven years ago"
-          cite="Abraham Lincoln"
-        >
+          cite="Abraham Lincoln">
           <Notes>Quote slide is for quotations with an attribution</Notes>
         </QuoteSlide>
+        <QuotesSlide
+          quotes={[
+            { quote: 'Hey man', cite: 'some guy' },
+            { quote: 'Hey', cite: 'some other guy' }
+          ]}>
+          <Notes>
+            Quotes slide is for a conversation in quotations, can appear one by
+            one
+          </Notes>
+        </QuotesSlide>
         <ConceptSlide
           concept="Question 1"
-          description="What is the meaning of life?"
-        >
+          description="What is the meaning of life?">
           <Notes>
             Concept slides are just the opposite of definition slides -- the
             concept is normal text while the description is header text below
@@ -146,8 +154,7 @@ export default class Presentation extends React.Component {
             '(+) Way simpler than global event bus',
             '(+) Localized scope',
             '(-) Have To Setup Subscriptions'
-          ]}
-        >
+          ]}>
           <Notes>
             <p>
               List slides are just an easy way to display an ordered or

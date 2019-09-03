@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { Heading } from 'spectacle';
+import React, { Component } from 'react'
+import { Heading } from 'spectacle'
 
 export default class Interactive extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       count: 0
-    };
-    this.handleClick = this.handleClick.bind(this);
+    }
+    this.handleClick = this.handleClick.bind(this)
   }
   handleClick() {
     this.setState({
       count: this.state.count + 1
-    });
+    })
   }
   render() {
     const styles = {
@@ -26,7 +26,7 @@ export default class Interactive extends Component {
       outline: 'none',
       fontWeight: 'bold',
       fontSize: '2em'
-    };
+    }
     return (
       <div>
         {this.state.count < 5 ? (
@@ -44,6 +44,6 @@ export default class Interactive extends Component {
           </Heading>
         )}
       </div>
-    );
+    )
   }
 }

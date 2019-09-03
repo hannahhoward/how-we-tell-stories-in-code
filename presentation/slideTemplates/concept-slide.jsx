@@ -25,8 +25,7 @@ const ConceptSlide = ({
         size={size}
         fit={fit}
         caps={caps}
-        textColor={headingColor(inverted)}
-      >
+        textColor={headingColor(inverted)}>
         {description}
       </Heading>
       {children}

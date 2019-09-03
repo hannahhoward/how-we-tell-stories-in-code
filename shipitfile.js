@@ -18,9 +18,11 @@ module.exports = function(shipit) {
   })
 
   shipit.blTask('build', () => {
-    return shipit.local('npm install', { cwd: '/Users/hannah/.shipit' }).then(() => {
-      return shipit.local('npm run build', { cwd: '/Users/hannah/.shipit'  })
-    })
+    return shipit
+      .local('npm install', { cwd: '/Users/hannah/.shipit' })
+      .then(() => {
+        return shipit.local('npm run build', { cwd: '/Users/hannah/.shipit' })
+      })
   })
   shipit.on('fetched', () => {
     shipit.start('build')

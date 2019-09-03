@@ -9,7 +9,7 @@ import asSlide from './as-slide.jsx'
 import FullScreen from './full-screen.jsx'
 
 const imageStyle = {
-  zoom: 8, //increase if you have very small images
+  zoom: 8, // increase if you have very small images
   display: 'block',
   margin: 'auto',
   height: 'auto',

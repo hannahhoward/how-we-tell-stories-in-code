@@ -1,8 +1,9 @@
+const GoogleFontsPlugin = require('@beyonk/google-fonts-webpack-plugin')
 /* eslint-disable */
 
 var path = require('path')
 var webpack = require('webpack')
-
+var googleFonts = require('./google-fonts.json')
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
@@ -19,7 +20,11 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new GoogleFontsPlugin({
+      fonts: googleFonts
+      /* ...options */
+    })
   ],
   module: {
     rules: [

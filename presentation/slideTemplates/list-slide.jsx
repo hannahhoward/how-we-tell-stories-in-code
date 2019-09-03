@@ -26,21 +26,20 @@ const ListSlide = ({
         fit={fit}
         size={size}
         caps={caps}
-        textColor={headingColor(inverted)}
-      >
+        textColor={headingColor(inverted)}>
         {title}
       </Heading>
       <List ordered={ordered} textColor={textColor(inverted)}>
         {appear
-          ? list.map(listItem => {
+          ? list.map((listItem, idx) => {
               return (
-                <Appear>
+                <Appear key={idx}>
                   <ListItem>{listItem}</ListItem>
                 </Appear>
               )
             })
-          : list.map(listItem => {
-              return <ListItem key={listItem}>{listItem}</ListItem>
+          : list.map((listItem, idx) => {
+              return <ListItem key={idx}>{listItem}</ListItem>
             })}
       </List>
       {children}
@@ -55,7 +54,7 @@ ListSlide.propTypes = {
   list: PropTypes.arrayOf(PropTypes.string).isRequired,
   ordered: PropTypes.bool,
   size: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   appear: PropTypes.bool.isRequired
 }
 

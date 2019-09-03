@@ -25,8 +25,7 @@ const DefinitionSlide = ({
         size={size}
         fit={fit}
         caps={caps}
-        textColor={headingColor(inverted)}
-      >
+        textColor={headingColor(inverted)}>
         {term}
         {colon ? ':' : ''}
       </Heading>
