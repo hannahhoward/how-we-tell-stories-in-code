@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'react-emotion'
 import {
   BlockQuote as BaseBlockQuote,
@@ -7,7 +8,8 @@ import {
   Cite as BaseCite,
   Image as BaseImage,
   List as BaseList,
-  ListItem as BaseListItem
+  ListItem as BaseListItem,
+  Notes as BaseNotes
 } from 'spectacle'
 export { Appear } from 'spectacle'
 
@@ -20,3 +22,12 @@ export const Cite = styled(BaseCite)``
 export const Image = styled(BaseImage)``
 export const List = styled(BaseList)``
 export const ListItem = styled(BaseListItem)``
+export const Notes = ({ children }) => {
+  return (
+    <BaseNotes>
+      <div style={{ fontFamily: 'Helvetica', fontSize: '1.5rem' }}>
+        {children}
+      </div>
+    </BaseNotes>
+  )
+}

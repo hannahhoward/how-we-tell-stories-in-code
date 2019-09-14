@@ -4,10 +4,10 @@ import React from 'react'
 import '../assets/prism-tomorrow-ally.css'
 
 // Import Spectacle Core tags
-import { Deck, Notes } from 'spectacle'
-
+import { Deck } from 'spectacle'
+import { Notes } from './slideTemplates/components.jsx'
 // import QuoteSlide from './slideTemplates/quote-slide.jsx'
-// import DefinitionSlide from './slideTemplates/definition-slide.jsx'
+import DefinitionSlide from './slideTemplates/definition-slide.jsx'
 import ListSlide from './slideTemplates/list-slide.jsx'
 import SimpleSlide from './slideTemplates/simple-slide.jsx'
 import ConceptSlide from './slideTemplates/concept-slide.jsx'
@@ -17,6 +17,7 @@ import FullImageSlide from './slideTemplates/full-image-slide.jsx'
 // import QuotesSlide from './slideTemplates/quotes-slide.jsx';
 import colors from './slideTemplates/colors'
 // import CodeSlide from 'spectacle-code-slide'
+import AboutMeSlide from './slideTemplates/about-me-slide.jsx'
 
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader'
@@ -36,8 +37,33 @@ const theme = createTheme(colors, {
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={['fade']} transitionDuration={500} theme={theme}>
-        <FullImageSlide image="intro.png"></FullImageSlide>
+      <Deck
+        progress="none"
+        showFullscreenControl={false}
+        controls={false}
+        transition={['fade']}
+        transitionDuration={500}
+        theme={theme}>
+        <AboutMeSlide>
+          <Notes>
+            <p>Hi everyone!</p>
+            <p>Before we start I few bits of information</p>
+            <p>
+              My names Hannah. You can find me on the internet @techgirlwonder.
+              And I use she her pronouns
+            </p>
+            <p>
+              I work for Carbon Five. We're a product development agency that
+              works with all kinds of clients from startups to enterprise,
+              helping them turn their ideas into software. We're hiring and
+              hirable, so come find us afterward if you're interested
+            </p>
+            <p>
+              This talk should come in around 30 minutes so there'll be time for
+              questions hopefully.
+            </p>
+          </Notes>
+        </AboutMeSlide>
         <ListSlide
           title={
             <span>
@@ -111,34 +137,36 @@ export default class Presentation extends React.Component {
         </FullImageSlide>
         <FullImageSlide inverted image="punch-wall.png">
           <Notes>
-            <p>
-              The goal of the this talk is to help you become a better
-              programmer and it's aimed at people who’ve made it into this
-              industry, perhaps by forcing their way in. You're here, and now
-              you're asking "what now?"
-            </p>
-            <p>
-              Recently I've had a few hunches, none of which I’m not totally
-              sure about.
-            </p>
-            <p>
-              The first hunch is that aside from my job title, I actually am a
-              pretty good programmer.
-            </p>
-            <p>
-              The second is that I might have something to say that might help
-              other people become better programmers.
-            </p>
-            <p>
-              And the third, that the best way to communicate what I have to say
-              is to tell you my story in tech, or specifically, four different
-              stories about how I got into the tech industry.
-            </p>
-            <p>
-              If that sounds a bit odd to you, please bear with me, and at the
-              end I’d ask everyone to give me your feedback on what is most and
-              least valuable to you.
-            </p>
+            <div style={{ fontSize: '1.3rem' }}>
+              <p>
+                The goal of the this talk is to help you become a better
+                programmer and it's aimed at people who’ve made it into this
+                industry, perhaps by forcing their way in. You're here, and now
+                you're asking "what now?"
+              </p>
+              <p>
+                Recently I've had a few hunches, none of which I’m not totally
+                sure about.
+              </p>
+              <p>
+                The first hunch is that aside from my job title, I actually am a
+                pretty good programmer.
+              </p>
+              <p>
+                The second is that I might have something to say that might help
+                other people become better programmers.
+              </p>
+              <p>
+                And the third, that the best way to communicate what I have to
+                say is to tell you my story in tech, or specifically, four
+                different stories about how I got into the tech industry.
+              </p>
+              <p>
+                If that sounds a bit odd to you, please bear with me, and at the
+                end I’d ask everyone to give me your feedback on what is most
+                and least valuable to you.
+              </p>
+            </div>
           </Notes>
         </FullImageSlide>
         <SimpleSlide statement="Part 1" />
@@ -167,12 +195,21 @@ export default class Presentation extends React.Component {
               up the basic mechanics - variables, loops, etc - quickly.
               Imperative logic made sense to me. When I’ve taught code school,
               I’ve seen that people pick up these mechanics at widely varying
-              speeds. When we have conversations about programming aptitude, we
-              rate people based on solely skils with these mechanics. To me,
-              this is basically like looking for great authors by going to a 2nd
-              grade classrooms and looking for students that are learning to
-              read fastest.
+              speeds.
             </p>
+          </Notes>
+        </FullImageSlide>
+        <FullImageSlide inverted image="teaching.png">
+          <Notes>
+            When you combine this variation in aptitude for the basic mechanics,
+            with the stubborn refusal of technologists to apply traditional
+            methodologies to teach these mechanics, as yesterdays keynote
+            pointed out, you create an artificial barrier. We’ve setup a system
+            where so many can’t get over the hump of the initial mechanics, that
+            we now rate people’s programming ability solely their facility with
+            these mechanics. Imagine if you were to asked to find the next
+            generations great authors, and you went to 2nd grade classrooms and
+            simply picked the students learning to read fastest.
           </Notes>
         </FullImageSlide>
         <FullImageSlide inverted image="jenga.png">
@@ -700,6 +737,11 @@ export default class Presentation extends React.Component {
             <p>Try to do better the next day.</p>
           </Notes>
         </FullImageSlide>
+        <DefinitionSlide
+          inverted
+          colon={false}
+          term="The End"
+          definition="stories-in-code.techgirlwonder.com"></DefinitionSlide>
       </Deck>
     )
   }
